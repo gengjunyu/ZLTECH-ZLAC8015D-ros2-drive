@@ -1,0 +1,50 @@
+# ZLAC机器人配置文件
+
+# 机器人物理参数
+robot_params:
+  wheel_radius: 0.1          # 轮子半径 (m)
+  wheel_width: 0.05          # 轮子宽度 (m)
+  wheel_base: 0.525          # 轮距 (m)
+  base_length: 0.4           # 底盘长度 (m)
+  base_width: 0.3            # 底盘宽度 (m)
+  base_height: 0.1           # 底盘高度 (m)
+  
+  # 质量参数
+  base_mass: 5.0             # 底盘质量 (kg)
+  wheel_mass: 0.5            # 轮子质量 (kg)
+
+# 驱动器配置
+driver_config:
+  serial_port: "/dev/ttyUSB0"   # 串口设备名
+  baudrate: 115200              # 波特率
+  modbus_id: 0x01              # Modbus设备ID
+  debug_enable: false          # 调试模式开关
+  
+# 话题配置
+topic_names:
+  cmd_vel: "cmd_vel"           # 速度控制话题
+  odom: "odom"                 # 里程计话题
+  joint_states: "joint_states" # 关节状态话题
+  
+# 坐标系配置
+frames:
+  odom_frame: "odom"                # 里程计坐标系
+  base_link_frame: "base_link"     # 底盘坐标系
+  wheel_left_frame: "wheel_left"    # 左轮坐标系
+  wheel_right_frame: "wheel_right"  # 右轮坐标系
+  
+# 里程计配置
+odometry:
+  covariance_diagonal: 0.1    # 里程计协方差对角线值
+  publish_rate: 50.0          # 发布频率 (Hz)
+  
+# 控制参数
+control:
+  max_linear_vel: 1.0         # 最大线速度 (m/s)
+  max_angular_vel: 1.0        # 最大角速度 (rad/s)
+  acceleration_limit: 0.5      # 加速度限制 (m/s²)
+  
+# 仿真参数
+simulation:
+  use_sim_time: false         # 是否使用仿真时间
+  gazebo_enabled: false       # 是否启用Gazebo仿真
