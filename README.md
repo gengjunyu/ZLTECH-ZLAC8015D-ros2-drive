@@ -342,5 +342,3 @@ colcon build --packages-up-to zlac8015d_serial
 - RViz2可视化支持
 
 ---
-
-*最后更新: 2024年*
